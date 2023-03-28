@@ -9,11 +9,13 @@ class LikeService {
     async toggleLike(modelId, userId, modelType){
         if(modelType == 'Tweet'){
             //Likeable is that tweet whose like gonna be toggle
+            console.log(modelId, modelType);
             var likeable = await this.tweetRepository.find(modelId); 
             console.log(likeable);
         }else if(modelType == 'Comment'){
 
         }else{
+            console.log(modelType , modelId);
             throw new Error('Unknown Model Type')
         }
 
